@@ -2,6 +2,17 @@
 #include "Kasyno.h" // Załączamy pełną definicję Kasyna dopiero w pliku .cpp
 #include <iostream>
 
+void Gracz::resetuj() {
+    liczbaKart = 0;
+    sumaPunktow = 0;
+    spasowal = false;
+    
+    // Czyścimy wskaźniki w ręce
+    for (int i = 0; i < 10; ++i) {
+        reka[i] = nullptr;
+    }
+}
+
 Gracz::Gracz() : liczbaKart(0), sumaPunktow(0), spasowal(false) {
     for (int i = 0; i < 10; ++i) {
         reka[i] = nullptr;
