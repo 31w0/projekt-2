@@ -3,6 +3,16 @@
 #include <cstdlib>
 #include <ctime>
 
+void Kasyno::zresetuj() {
+    tasuj(); // Tasuje talię i resetuje licznik wydanych kart (wydaneKarty = 0)
+    
+    // Resetuje konta wszystkich graczy
+    for (int i = 0; i < liczbaGraczy; ++i) {
+        gracze[i].resetuj();
+    }
+    std::cout << "\n[Kasyno]: Talia zostala potasowana, a konta graczy wyzerowane.\n";
+}
+
 Kasyno::Kasyno() : wydaneKarty(0), gracze(nullptr), liczbaGraczy(0) {
     int index = 0;
     for (int kolor = 0; kolor < 4; ++kolor) {
